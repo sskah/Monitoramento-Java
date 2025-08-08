@@ -1,21 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        double temp = 10;
-        try {
-            validar(temp);
-        }
-        catch (LeituraInvalidaException e){
-            System.out.println(e.getMessage());
-        }
-        finally {
-            System.out.println("X");
-        }
+        List<Sensor> listaSensores = new ArrayList<>();
+        List<List<Double>> listaTemp = new ArrayList<>();
 
-    }
-
-    private static void validar(double temp) throws LeituraInvalidaException {
-        if(temp < -30 || temp > 30){
-            throw new LeituraInvalidaException(5, temp);
+        for (int i = 0; i <= 3 ; i++) {
+            listaSensores.add(new Sensor(String.valueOf(i)));
         }
     }
 }
